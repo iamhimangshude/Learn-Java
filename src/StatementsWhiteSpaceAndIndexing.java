@@ -1,4 +1,4 @@
-public class Main {
+public class StatementsWhiteSpaceAndIndexing {
     public static void main(String[] args) {
         int        myVariable = 50; // will get executed
 
