@@ -1,3 +1,4 @@
+package basics;
 public class MethodOverloading {
     public static void main(String[] args) {
 //        int newScore = calculateScore("Tim", 500);
