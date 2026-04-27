@@ -2,11 +2,25 @@ package oop;
 
 // Note: Invocation of this class is done in ClassesChallenge.java file.
 public class Bank {
-    private int accountNumber;
+    private String accountNumber;
     private double balance = 0.0D;
     private String customerName;
     private String email;
     private String phoneNumber;
+
+    public Bank(){
+        System.out.println("Empty constructor called");
+    }
+
+    public Bank(String accountNumber, double balance, String customerName, String email, String phoneNumber)
+    {
+        System.out.println("Account constructor with params called");
+        this.accountNumber = accountNumber;
+        this.balance = balance;
+        this.customerName = customerName;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+    }
 
     public void accountDetails() {
         System.out.println("Customer: " + this.customerName +
@@ -31,11 +45,11 @@ public class Bank {
         }
     }
 
-    public int getAccountNumber() {
+    public String getAccountNumber() {
         return this.accountNumber;
     }
 
-    public void setAccountNumber(int accountNumber) {
+    public void setAccountNumber(String accountNumber) {
         this.accountNumber = accountNumber;
     }
 

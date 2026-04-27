@@ -2,14 +2,16 @@ package oop;
 
 public class ClassesChallenge {
     public static void main(String[] args) {
-        Bank account = new Bank();
+        Bank account = new Bank("12345", 1000.0, "Himangshu De", "iamhimangshude@github.com", "9087654321");
 
-        account.setAccountNumber(12345);
-        account.setBalance(1000.0);
-        account.setCustomerName("Himangshu De");
-        account.setEmail("iamhimangshude@github.com");
-        account.setPhoneNumber("9087654321");
-        
+        System.out.println(account.getAccountNumber());
+        System.out.println(account.getBalance());
+        // account.setAccountNumber("12345");
+        // account.setBalance(1000.0);
+        // account.setCustomerName("Himangshu De");
+        // account.setEmail("iamhimangshude@github.com");
+        // account.setPhoneNumber("9087654321");
+
         account.withdraw(1001);
         account.deposit(1000);
         account.withdraw(500);
