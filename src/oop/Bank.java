@@ -8,18 +8,25 @@ public class Bank {
     private String email;
     private String phoneNumber;
 
-    public Bank(){
+    public Bank() {
+        this("56789", 2.50, "Default Name", "Default Email", "Default Phone");
         System.out.println("Empty constructor called");
     }
 
-    public Bank(String accountNumber, double balance, String customerName, String email, String phoneNumber)
-    {
+    public Bank(String accountNumber, double balance, String customerName, String email, String phoneNumber) {
         System.out.println("Account constructor with params called");
         this.accountNumber = accountNumber;
         this.balance = balance;
         this.customerName = customerName;
         this.email = email;
         this.phoneNumber = phoneNumber;
+    }
+
+    public Bank(String customerName, String email, String phoneNumber) {
+        this("99999", 100.55, customerName, email, phoneNumber);
+        // this.customerName = customerName;
+        // this.email = email;
+        // this.phoneNumber = phoneNumber;
     }
 
     public void accountDetails() {
