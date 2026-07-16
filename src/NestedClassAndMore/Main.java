@@ -6,6 +6,7 @@ import java.util.List;
 
 import NestedClassAndMore.domain.Employee;
 import NestedClassAndMore.domain.EmployeeComparator;
+import NestedClassAndMore.domain.StoreEmployee;
 
 public class Main {
     public static void main(String[] args) {
@@ -38,6 +39,25 @@ public class Main {
         System.out.println();
         System.out.println("Sort by name in reversed");
         printListElements("name", true, employees);
+
+        System.out.println("Store employees");
+
+        List<StoreEmployee> storeEmployees = new ArrayList<>(List.of(
+                new StoreEmployee(10015, "Meg", 2019, "Target"),
+                new StoreEmployee(10515, "Joe", 2021, "Walmart"),
+                new StoreEmployee(10105, "Tom", 2020, "Macys"),
+                new StoreEmployee(10215, "Marty", 2018, "Walmart"),
+                new StoreEmployee(10322, "Bud", 2016, "Target")));
+
+        // var comparator = new StoreEmployee.EmployeeComparator<>();
+        // storeEmployees.sort(comparator);
+
+        var storeComparator = new StoreEmployee().new StoreComparator<>();
+        storeEmployees.sort(storeComparator);
+
+        for (StoreEmployee e : storeEmployees) {
+            System.out.println(e);
+        }
 
     }
 
