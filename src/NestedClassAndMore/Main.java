@@ -1,11 +1,9 @@
 package NestedClassAndMore;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 import NestedClassAndMore.domain.Employee;
-import NestedClassAndMore.domain.EmployeeComparator;
 import NestedClassAndMore.domain.StoreEmployee;
 
 public class Main {
@@ -59,6 +57,9 @@ public class Main {
             System.out.println(e);
         }
 
+        System.out.println("with pig latin names");
+        addPigLatinName(storeEmployees);
+
     }
 
     private static void printListElements(String sortTypeParam, boolean reversed, List<? extends Employee> list) {
@@ -69,6 +70,42 @@ public class Main {
 
         for (var item : list) {
             System.out.println(item);
+        }
+    }
+
+    private static void addPigLatinName(List<? extends StoreEmployee> list){
+        String lastName = "Piggy";
+        class DecoratedEmployee extends StoreEmployee implements Comparable<DecoratedEmployee>{
+            private String pigLatinName;
+            private Employee originalInstance;
+
+            public DecoratedEmployee(Employee originalInstance, String pigLatinName) {
+                this.originalInstance = originalInstance;
+                this.pigLatinName = pigLatinName + " " + lastName;
+            }
+
+            @Override
+            public String toString() {
+                return originalInstance.toString() + " " + pigLatinName;
+            }
+
+            @Override
+            public int compareTo(DecoratedEmployee decoratedEmployee) {
+                return pigLatinName.compareTo(decoratedEmployee.pigLatinName);
+            }
+        }
+
+        List<DecoratedEmployee> newList = new ArrayList<>(list.size());
+
+        for (var employee : list){
+            String name = employee.getName();
+            String pigLatin = name.substring(1) + name.charAt(0) + "ay";
+            newList.add(new DecoratedEmployee(employee, pigLatin));
+        }
+
+        newList.sort(null);
+        for (var dEmployee: newList){
+            System.out.println(dEmployee.originalInstance.getName() + " " + dEmployee.pigLatinName);
         }
     }
 }
