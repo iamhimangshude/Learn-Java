@@ -37,5 +37,15 @@ public class Main {
         // `prefix` is required to
         // be final or effectively final based on its usage"
 
+        System.out.println("-----------------------");
+        var result = calculator((var a, var b) -> a + b, 5, 6);
+        var result2 = calculator((var a, var b) -> a / b, 39.6, 6.6D);
+        var result3 = calculator((a, b) -> a.toUpperCase() + " "+ b.toUpperCase(), "Reginald", "Specter");
+    }
+
+    public static <T> T calculator(Operation<T> function, T value1, T value2) {
+        T result = function.operate(value1, value2);
+        System.out.println("Result of operation: " + result);
+        return result;
     }
 }
