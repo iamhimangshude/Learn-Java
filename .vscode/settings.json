@@ -1,7 +1,13 @@
 {
-    "java.project.sourcePaths": ["src"],
+    "java.project.sourcePaths": [
+        "src"
+    ],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
         "lib/**/*.jar"
-    ]
+    ],
+    "java.inlayHints.parameterNames.enabled": "all",
+    "java.inlayHints.parameterTypes.enabled": true,
+    "java.inlayHints.formatParameters.enabled": true,
+    "java.inlayHints.variableTypes.enabled": true
 }
