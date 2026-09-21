@@ -1,10 +1,10 @@
 package OOPs;
 
 // class Calculator {
-//     int a;
+//     int a; // this is an instance variable in java
 
 //     public int add(int n1, int n2) { // this is a method
-//         int r = n1 + n2;
+//         int r = n1 + n2; // here `r` is a local variable
 //         return r;
 //     }
 // }
